@@ -44,7 +44,7 @@ MTech_GT_WHAR/
 └── utils/
     └── metrics.py            # Accuracy & Macro-F1 calculators
 
-```text    
+```    
 ## 🛠️ Installation & Setup
 
 It is highly recommended to use a virtual environment. For optimal performance,
