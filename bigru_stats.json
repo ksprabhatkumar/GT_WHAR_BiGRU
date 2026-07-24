@@ -1,0 +1,5 @@
+{
+    "model_name": "BiGRU (GT-WHAR Baseline)",
+    "parameters": 94751,
+    "latency_ms": 465.6383203125
+}

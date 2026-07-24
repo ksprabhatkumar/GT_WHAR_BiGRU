@@ -20,7 +20,31 @@ def process_dsads():
                 except Exception:
                     pass
 
-    X_tensor = torch.tensor(np.array(all_data), dtype=torch.float32)
+    if len(all_data) == 0:
+        print("❌ No files found! Check your har_data/DSADS/data/ folder.")
+        return
+
+    # ==========================================
+    # 🌟 NEW: Z-SCORE NORMALIZATION
+    # ==========================================
+    # Convert list to numpy array first
+    X_np = np.array(all_data, dtype=np.float32)
+    
+    # Calculate mean and std over the entire dataset across the Feature dimension
+    # Shape of X_np is (9120, 125, 5, 9). We average over Batch (0), Time (1), and Nodes (2)
+    means = np.mean(X_np, axis=(0, 1, 2), keepdims=True)
+    stds = np.std(X_np, axis=(0, 1, 2), keepdims=True)
+    
+    # Prevent division by zero if a sensor channel is completely dead
+    stds[stds == 0] = 1.0 
+    
+    # Apply standard scaling (Mean = 0, Std = 1)
+    X_normalized = (X_np - means) / stds
+    print(f"Data Normalized! New Global Mean: {np.mean(X_normalized):.4f}, Std: {np.std(X_normalized):.4f}")
+    # ==========================================
+
+    # Convert to PyTorch Tensors
+    X_tensor = torch.tensor(X_normalized, dtype=torch.float32)
     Y_tensor = torch.tensor(np.array(all_labels), dtype=torch.long)
     P_tensor = torch.tensor(np.array(all_persons), dtype=torch.long)
 

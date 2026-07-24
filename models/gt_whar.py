@@ -79,6 +79,8 @@ class GT_WHAR(nn.Module):
         self.backward_cell = GraphTemporalLearningUnitCell(in_features, hidden_dim)
         
         # Final classifier takes concatenated forward and backward states of ALL nodes
+        # --- NEW: Added Dropout to prevent overfitting! ---
+        self.dropout = nn.Dropout(0.3)
         self.classifier = nn.Linear(hidden_dim * 2 * num_nodes, num_classes)
 
     def get_batched_edge_index(self, batch_size, device):
@@ -113,4 +115,8 @@ class GT_WHAR(nn.Module):
         h_backward = h_backward.view(B, N * self.hidden_dim)
         
         out = torch.cat([h_forward, h_backward], dim=-1)
+        
+        # --- NEW: Apply Dropout before classifying ---
+        out = self.dropout(out) 
+        
         return self.classifier(out)

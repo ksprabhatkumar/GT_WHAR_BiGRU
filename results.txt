@@ -1,0 +1,21 @@
+[2026-07-16 21:41:04] Dataset: DSADS | Subject: 1 | Acc: 88.51% | F1: 86.76%
+[2026-07-16 22:27:46] Dataset: DSADS | Subject: 2 | Acc: 87.63% | F1: 85.78%
+[2026-07-16 23:15:34] Dataset: DSADS | Subject: 3 | Acc: 87.89% | F1: 86.91%
+[2026-07-17 00:03:41] Dataset: DSADS | Subject: 4 | Acc: 77.63% | F1: 73.43%
+[2026-07-17 00:51:57] Dataset: DSADS | Subject: 5 | Acc: 82.37% | F1: 79.78%
+[2026-07-17 01:40:35] Dataset: DSADS | Subject: 6 | Acc: 92.19% | F1: 91.89%
+[2026-07-17 02:28:54] Dataset: DSADS | Subject: 7 | Acc: 81.75% | F1: 78.51%
+[2026-07-17 03:17:09] Dataset: DSADS | Subject: 8 | Acc: 78.60% | F1: 74.65%
+[2026-07-17 03:17:09] >>> FINAL 8-FOLD AVG FOR DSADS (BiGRU Baseline) | Acc: 84.57% | F1: 82.22%
+
+
+[2026-07-22 01:53:37] Subj: 1 | Acc: 86.14% | F1: 83.56% | Params: BS=64, LR=0.001, Decay=0.9@Ep10, Hidden=64
+[2026-07-22 05:42:05] Subj: 2 | Acc: 92.02% | F1: 90.48% | Params: BS=64, LR=0.001, Decay=0.9@Ep10, Hidden=64
+[2026-07-22 09:09:48] Subj: 3 | Acc: 95.35% | F1: 95.35% | Params: BS=64, LR=0.001, Decay=0.9@Ep10, Hidden=64
+[2026-07-22 12:22:55] Subj: 4 | Acc: 92.89% | F1: 92.15% | Params: BS=64, LR=0.001, Decay=0.9@Ep10, Hidden=64
+[2026-07-22 14:33:20] Subj: 5 | Acc: 89.65% | F1: 87.80% | Params: BS=64, LR=0.001, Decay=0.9@Ep10, Hidden=64
+[2026-07-22 16:43:44] Subj: 6 | Acc: 94.30% | F1: 94.13% | Params: BS=64, LR=0.001, Decay=0.9@Ep10, Hidden=64
+[2026-07-22 18:51:27] Subj: 7 | Acc: 88.07% | F1: 86.27% | Params: BS=64, LR=0.001, Decay=0.9@Ep10, Hidden=64
+[2026-07-22 21:01:07] Subj: 8 | Acc: 83.51% | F1: 81.77% | Params: BS=64, LR=0.001, Decay=0.9@Ep10, Hidden=64
+[2026-07-22 21:01:07] >>> FINAL 8-FOLD AVG (BiGRU) | Acc: 90.24% | F1: 88.94% [Trained for 50 Epochs]
+
